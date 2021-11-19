@@ -10,7 +10,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {	
 	// Load Image
 	// Mat src = imread("tower.png", CV_LOAD_IMAGE_COLOR);
-	Mat src_gray = imread("tower.png", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat src_gray = imread("./image/raw_image/tower.png", CV_LOAD_IMAGE_GRAYSCALE);
 	imshow("Raw image", src_gray);
 
 	// Pre-processing and Find Edges
@@ -32,7 +32,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	vector<int> quality;
 	quality.push_back(CV_IMWRITE_JPEG_QUALITY);
 	quality.push_back(95);
-	imwrite("./picture/tower_contours.jpg", contoursImg, quality);
+	imwrite("./image/contour/tower_contours.jpg", contoursImg, quality);
 
 	// Generate G Code for SCARA
 	ofstream f1("x.txt");
